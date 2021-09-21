@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 4.1.1 (Python 3.9.7 on win32)" generated="20210920 23:04:40.553" rpa="false" schemaversion="2">
+<robot generator="Robot 4.1.1 (Python 3.9.7 on win32)" generated="20210921 00:18:49.595" rpa="false" schemaversion="2">
 <suite id="s1" name="Cenario 1" source="E:\Projetos\Desafio Noesis\Automation-Web\tests\cenario_1.robot">
 <test id="s1-t1" name="Cenario 01: Deve validar a apresentação dos resultados com a Especialidade e Cidade">
 <kw name="Open session" library="driverFactory" type="SETUP">
@@ -7,10 +7,10 @@
 <arg>${URL}</arg>
 <arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20210920 23:04:40.881" level="INFO">Opening browser 'chrome' to base url 'https://www.unimed.coop.br'.</msg>
-<status status="PASS" starttime="20210920 23:04:40.880" endtime="20210920 23:04:53.984"/>
+<msg timestamp="20210921 00:18:49.907" level="INFO">Opening browser 'chrome' to base url 'https://www.unimed.coop.br'.</msg>
+<status status="PASS" starttime="20210921 00:18:49.907" endtime="20210921 00:18:54.997"/>
 </kw>
-<status status="PASS" starttime="20210920 23:04:40.880" endtime="20210920 23:04:53.984"/>
+<status status="PASS" starttime="20210921 00:18:49.906" endtime="20210921 00:18:54.998"/>
 </kw>
 <kw name="Dado" library="cucumber-PTBr">
 <arg>que eu esteja na Home Page da Unimed</arg>
@@ -21,20 +21,20 @@
 <kw name="Get Title" library="SeleniumLibrary">
 <var>${PAGE_TITLE}</var>
 <doc>Returns the title of the current page.</doc>
-<msg timestamp="20210920 23:04:53.992" level="INFO">${PAGE_TITLE} = Home - Site Institucional</msg>
-<status status="PASS" starttime="20210920 23:04:53.986" endtime="20210920 23:04:53.992"/>
+<msg timestamp="20210921 00:18:55.008" level="INFO">${PAGE_TITLE} = Home - Site Institucional</msg>
+<status status="PASS" starttime="20210921 00:18:55.001" endtime="20210921 00:18:55.008"/>
 </kw>
 <kw name="Should Be Equal" library="BuiltIn">
 <arg>${PAGE_TITLE}</arg>
 <arg>Home - Site Institucional</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" starttime="20210920 23:04:53.992" endtime="20210920 23:04:53.993"/>
+<status status="PASS" starttime="20210921 00:18:55.009" endtime="20210921 00:18:55.009"/>
 </kw>
-<status status="PASS" starttime="20210920 23:04:53.986" endtime="20210920 23:04:53.993"/>
+<status status="PASS" starttime="20210921 00:18:55.001" endtime="20210921 00:18:55.009"/>
 </kw>
-<status status="PASS" starttime="20210920 23:04:53.985" endtime="20210920 23:04:53.993"/>
+<status status="PASS" starttime="20210921 00:18:55.000" endtime="20210921 00:18:55.010"/>
 </kw>
-<status status="PASS" starttime="20210920 23:04:53.984" endtime="20210920 23:04:53.993"/>
+<status status="PASS" starttime="20210921 00:18:54.998" endtime="20210921 00:18:55.010"/>
 </kw>
 <kw name="E" library="cucumber-PTBr">
 <arg>clicar em "Consulte agora"</arg>
@@ -45,20 +45,20 @@
 <kw name="Page Should Contain" library="SeleniumLibrary">
 <arg>${CONSULTE_AGORA}</arg>
 <doc>Verifies that current page contains ``text``.</doc>
-<msg timestamp="20210920 23:04:54.030" level="INFO">Current page contains text 'Consulte agora'.</msg>
-<status status="PASS" starttime="20210920 23:04:53.995" endtime="20210920 23:04:54.030"/>
+<msg timestamp="20210921 00:18:55.039" level="INFO">Current page contains text 'Consulte agora'.</msg>
+<status status="PASS" starttime="20210921 00:18:55.011" endtime="20210921 00:18:55.039"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${BOTAO_CONSULTA}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20210920 23:04:54.031" level="INFO">Clicking element 'id=fragment-oimm-link'.</msg>
-<status status="PASS" starttime="20210920 23:04:54.030" endtime="20210920 23:04:56.915"/>
+<msg timestamp="20210921 00:18:55.040" level="INFO">Clicking element 'id=fragment-oimm-link'.</msg>
+<status status="PASS" starttime="20210921 00:18:55.040" endtime="20210921 00:18:56.347"/>
 </kw>
-<status status="PASS" starttime="20210920 23:04:53.994" endtime="20210920 23:04:56.916"/>
+<status status="PASS" starttime="20210921 00:18:55.011" endtime="20210921 00:18:56.347"/>
 </kw>
-<status status="PASS" starttime="20210920 23:04:53.994" endtime="20210920 23:04:56.916"/>
+<status status="PASS" starttime="20210921 00:18:55.011" endtime="20210921 00:18:56.347"/>
 </kw>
-<status status="PASS" starttime="20210920 23:04:53.993" endtime="20210920 23:04:56.916"/>
+<status status="PASS" starttime="20210921 00:18:55.010" endtime="20210921 00:18:56.347"/>
 </kw>
 <kw name="E" library="cucumber-PTBr">
 <arg>acessar a aba de "Busca detalhada"</arg>
@@ -69,55 +69,183 @@
 <kw name="Get Title" library="SeleniumLibrary">
 <var>${PAGE_TITLE}</var>
 <doc>Returns the title of the current page.</doc>
-<msg timestamp="20210920 23:04:56.939" level="INFO">${PAGE_TITLE} = Guia Médico - Site Institucional</msg>
-<status status="PASS" starttime="20210920 23:04:56.918" endtime="20210920 23:04:56.939"/>
+<msg timestamp="20210921 00:18:56.407" level="INFO">${PAGE_TITLE} = Guia Médico - Site Institucional</msg>
+<status status="PASS" starttime="20210921 00:18:56.349" endtime="20210921 00:18:56.408"/>
 </kw>
 <kw name="Should Be Equal" library="BuiltIn">
 <arg>${PAGE_TITLE}</arg>
 <arg>Guia Médico - Site Institucional</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" starttime="20210920 23:04:56.940" endtime="20210920 23:04:56.940"/>
+<status status="PASS" starttime="20210921 00:18:56.408" endtime="20210921 00:18:56.408"/>
 </kw>
 <kw name="Element Should Contain" library="SeleniumLibrary">
 <arg>${HEADING_TITLE}</arg>
 <arg>Encontre um médico</arg>
 <doc>Verifies that element ``locator`` contains text ``expected``.</doc>
-<msg timestamp="20210920 23:04:57.016" level="INFO">Element 'xpath=//*/div/h1[@class="Heading--title"]' contains text 'Encontre um médico'.</msg>
-<status status="PASS" starttime="20210920 23:04:56.940" endtime="20210920 23:04:57.016"/>
+<msg timestamp="20210921 00:18:56.542" level="INFO">Element 'xpath=//*/div/h1[@class="Heading--title"]' contains text 'Encontre um médico'.</msg>
+<status status="PASS" starttime="20210921 00:18:56.408" endtime="20210921 00:18:56.542"/>
 </kw>
 <kw name="Element Should Contain" library="SeleniumLibrary">
 <arg>${HEADING_SUB_TITLE}</arg>
 <arg>E outros recursos da Unimed, sempre perto de você</arg>
 <doc>Verifies that element ``locator`` contains text ``expected``.</doc>
-<msg timestamp="20210920 23:04:57.110" level="INFO">Element 'xpath=//*/div/h2[@class="Heading--sub-title"]' contains text 'E outros recursos da Unimed, sempre perto de você'.</msg>
-<status status="PASS" starttime="20210920 23:04:57.016" endtime="20210920 23:04:57.110"/>
+<msg timestamp="20210921 00:18:56.657" level="INFO">Element 'xpath=//*/div/h2[@class="Heading--sub-title"]' contains text 'E outros recursos da Unimed, sempre perto de você'.</msg>
+<status status="PASS" starttime="20210921 00:18:56.543" endtime="20210921 00:18:56.658"/>
 </kw>
-<status status="PASS" starttime="20210920 23:04:56.918" endtime="20210920 23:04:57.110"/>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${BOTAO_BUSCA_DETALHADA}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210921 00:18:56.659" level="INFO">Clicking element 'id=react-tabs-2'.</msg>
+<status status="PASS" starttime="20210921 00:18:56.658" endtime="20210921 00:18:56.997"/>
 </kw>
-<status status="PASS" starttime="20210920 23:04:56.917" endtime="20210920 23:04:57.110"/>
+<status status="PASS" starttime="20210921 00:18:56.348" endtime="20210921 00:18:56.997"/>
 </kw>
-<status status="PASS" starttime="20210920 23:04:56.916" endtime="20210920 23:04:57.111"/>
+<status status="PASS" starttime="20210921 00:18:56.348" endtime="20210921 00:18:56.998"/>
+</kw>
+<status status="PASS" starttime="20210921 00:18:56.347" endtime="20210921 00:18:56.998"/>
+</kw>
+<kw name="E" library="cucumber-PTBr">
+<arg>pesquisar pelo estado do "Rio de Janeiro"</arg>
+<kw name="Run Keyword" library="BuiltIn">
+<arg>${keyword}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<kw name="pesquisar pelo estado do &quot;Rio de Janeiro&quot;" library="cenario_1Page" sourcename="pesquisar pelo estado do &quot;${RIO_DE_JANEIRO}&quot;">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${SELECT_ESTADO}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210921 00:18:57.000" endtime="20210921 00:18:57.084"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${SELECT_ESTADO}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210921 00:18:57.085" level="INFO">Clicking element 'xpath=//div[@id="province-input"]/div/div'.</msg>
+<status status="PASS" starttime="20210921 00:18:57.085" endtime="20210921 00:18:57.211"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${RIO}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210921 00:18:57.211" endtime="20210921 00:18:57.425"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${RIO}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210921 00:18:57.426" level="INFO">Clicking element 'id=react-select-4-option-18'.</msg>
+<status status="PASS" starttime="20210921 00:18:57.425" endtime="20210921 00:18:57.587"/>
+</kw>
+<status status="PASS" starttime="20210921 00:18:56.999" endtime="20210921 00:18:57.588"/>
+</kw>
+<status status="PASS" starttime="20210921 00:18:56.999" endtime="20210921 00:18:57.588"/>
+</kw>
+<status status="PASS" starttime="20210921 00:18:56.998" endtime="20210921 00:18:57.588"/>
+</kw>
+<kw name="Quando" library="cucumber-PTBr">
+<arg>eu efetuar a buscar pelo estado selecionado</arg>
+<kw name="Run Keyword" library="BuiltIn">
+<arg>${keyword}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<kw name="eu efetuar a buscar pelo estado selecionado" library="cenario_1Page">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${BOTAO_PESQUISAR}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210921 00:18:57.590" endtime="20210921 00:18:57.692"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${BOTAO_PESQUISAR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210921 00:18:57.693" level="INFO">Clicking element 'xpath=//*/button[@type="submit"][text()="Pesquisar"]'.</msg>
+<status status="PASS" starttime="20210921 00:18:57.692" endtime="20210921 00:18:57.950"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210921 00:19:02.951" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20210921 00:18:57.950" endtime="20210921 00:19:02.951"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${TEXTO}</var>
+<arg>${TEXTO_BUSCA}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20210921 00:19:02.983" level="INFO">${TEXTO} = Foram encontrados 10860 resultados da sua busca.</msg>
+<status status="PASS" starttime="20210921 00:19:02.951" endtime="20210921 00:19:02.983"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${TEXTO}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210921 00:19:02.984" level="INFO">Foram encontrados 10860 resultados da sua busca.</msg>
+<status status="PASS" starttime="20210921 00:19:02.983" endtime="20210921 00:19:02.984"/>
+</kw>
+<status status="PASS" starttime="20210921 00:18:57.590" endtime="20210921 00:19:02.984"/>
+</kw>
+<status status="PASS" starttime="20210921 00:18:57.589" endtime="20210921 00:19:02.984"/>
+</kw>
+<status status="PASS" starttime="20210921 00:18:57.588" endtime="20210921 00:19:02.984"/>
+</kw>
+<kw name="Então" library="cucumber-PTBr">
+<arg>devo validar a apresentação dos resultados com a Especialidade e Cidade</arg>
+<kw name="Run Keyword" library="BuiltIn">
+<arg>${keyword}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<kw name="devo validar a apresentação dos resultados com a Especialidade e Cidade" library="cenario_1Page">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${LOCALIZACAO}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210921 00:19:02.986" endtime="20210921 00:19:03.013"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${VALIDA_LOCALIZACAO}</var>
+<arg>${LOCALIZACAO}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20210921 00:19:03.039" level="INFO">${VALIDA_LOCALIZACAO} = Centro, Porciúncula/RJ
+1948.89km de você</msg>
+<status status="PASS" starttime="20210921 00:19:03.013" endtime="20210921 00:19:03.040"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${VALIDA_LOCALIZACAO}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210921 00:19:03.040" level="INFO">Centro, Porciúncula/RJ
+1948.89km de você</msg>
+<status status="PASS" starttime="20210921 00:19:03.040" endtime="20210921 00:19:03.040"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>${VALIDA_LOCALIZACAO}</arg>
+<arg>Centro, Porciúncula/RJ</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20210921 00:19:03.220" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-4.png"&gt;&lt;img src="selenium-screenshot-4.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210921 00:19:03.056" endtime="20210921 00:19:03.220"/>
+</kw>
+<msg timestamp="20210921 00:19:03.226" level="FAIL">Element with locator 'Centro, Porciúncula/RJ
+1948.89km de você' not found.</msg>
+<status status="FAIL" starttime="20210921 00:19:03.040" endtime="20210921 00:19:03.226"/>
+</kw>
+<status status="FAIL" starttime="20210921 00:19:02.985" endtime="20210921 00:19:03.228"/>
+</kw>
+<status status="FAIL" starttime="20210921 00:19:02.985" endtime="20210921 00:19:03.228"/>
+</kw>
+<status status="FAIL" starttime="20210921 00:19:02.985" endtime="20210921 00:19:03.229"/>
 </kw>
 <kw name="Close session" library="driverFactory" type="TEARDOWN">
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20210920 23:04:57.112" endtime="20210920 23:04:59.202"/>
+<status status="PASS" starttime="20210921 00:19:03.230" endtime="20210921 00:19:05.331"/>
 </kw>
-<status status="PASS" starttime="20210920 23:04:57.111" endtime="20210920 23:04:59.203"/>
+<status status="PASS" starttime="20210921 00:19:03.230" endtime="20210921 00:19:05.332"/>
 </kw>
-<status status="PASS" starttime="20210920 23:04:40.878" endtime="20210920 23:04:59.203"/>
+<status status="FAIL" starttime="20210921 00:18:49.905" endtime="20210921 00:19:05.332">Element with locator 'Centro, Porciúncula/RJ
+1948.89km de você' not found.</status>
 </test>
 <doc>No site https://www.unimed.coop.br/ validar a seguinte sequência de ações</doc>
-<status status="PASS" starttime="20210920 23:04:40.555" endtime="20210920 23:04:59.205"/>
+<status status="FAIL" starttime="20210921 00:18:49.597" endtime="20210921 00:19:05.334"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Cenario 1">Cenario 1</stat>
+<stat pass="0" fail="1" skip="0" id="s1" name="Cenario 1">Cenario 1</stat>
 </suite>
 </statistics>
 <errors>

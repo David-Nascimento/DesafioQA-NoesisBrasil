@@ -15,6 +15,6 @@ Cenario 01: Deve validar a apresentação dos resultados com a Especialidade e C
     Dado      que eu esteja na Home Page da Unimed
     E         clicar em "Consulte agora"
     E         acessar a aba de "Busca detalhada"
-    # E         pesquisar pelo estado do "Rio de Janeiro"
-    # Quando    eu efetuar a buscar pelo estado selecionado
-    # Então     devo validar a apresentação dos resultados com a Especialidade e Cidade
+    E         pesquisar pelo estado do "Rio de Janeiro"
+    Quando    eu efetuar a buscar pelo estado selecionado
+    Então     devo validar a apresentação dos resultados com a Especialidade e Cidade
