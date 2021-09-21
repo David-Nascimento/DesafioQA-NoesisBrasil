@@ -44,4 +44,4 @@ devo validar a apresentação dos resultados com a Especialidade e Cidade
     Wait Until Element Is Visible    ${LOCALIZACAO}
     ${VALIDA_LOCALIZACAO}            Get Text                    ${LOCALIZACAO}
     Log                              ${VALIDA_LOCALIZACAO}
-    # Element Text Should Be           ${VALIDA_LOCALIZACAO}       Centro, Porciúncula/RJ // verificar
+    Element Should Contain           ${LOCALIZACAO}              Centro, Porciúncula/RJ

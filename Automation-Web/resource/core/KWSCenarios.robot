@@ -17,4 +17,4 @@ ${BOTAO_PESQUISAR}          xpath=//*/button[@type="submit"][text()="Pesquisar"]
 
 ${TEXTO_BUSCA}              xpath=//*/span[@class="Text TotalFoundProviders"]
 
-${LOCALIZACAO}              xpath=//*[@id="gm-v3-root"]/div/div[2]/div[2]/div[1]/div[2]/div[1]/div/div[2]/div[1]
+${LOCALIZACAO}              xpath=//*/div[@class="ProviderAddressColumn col-lg-7"]
