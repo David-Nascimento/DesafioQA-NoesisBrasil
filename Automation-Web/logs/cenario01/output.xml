@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.1 (Python 3.9.7 on win32)" generated="20210920 23:04:40.553" rpa="false" schemaversion="2">
+<suite id="s1" name="Cenario 1" source="E:\Projetos\Desafio Noesis\Automation-Web\tests\cenario_1.robot">
+<test id="s1-t1" name="Cenario 01: Deve validar a apresentação dos resultados com a Especialidade e Cidade">
+<kw name="Open session" library="driverFactory" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20210920 23:04:40.881" level="INFO">Opening browser 'chrome' to base url 'https://www.unimed.coop.br'.</msg>
+<status status="PASS" starttime="20210920 23:04:40.880" endtime="20210920 23:04:53.984"/>
+</kw>
+<status status="PASS" starttime="20210920 23:04:40.880" endtime="20210920 23:04:53.984"/>
+</kw>
+<kw name="Dado" library="cucumber-PTBr">
+<arg>que eu esteja na Home Page da Unimed</arg>
+<kw name="Run Keyword" library="BuiltIn">
+<arg>${keyword}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<kw name="que eu esteja na Home Page da Unimed" library="cenario_1Page">
+<kw name="Get Title" library="SeleniumLibrary">
+<var>${PAGE_TITLE}</var>
+<doc>Returns the title of the current page.</doc>
+<msg timestamp="20210920 23:04:53.992" level="INFO">${PAGE_TITLE} = Home - Site Institucional</msg>
+<status status="PASS" starttime="20210920 23:04:53.986" endtime="20210920 23:04:53.992"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${PAGE_TITLE}</arg>
+<arg>Home - Site Institucional</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20210920 23:04:53.992" endtime="20210920 23:04:53.993"/>
+</kw>
+<status status="PASS" starttime="20210920 23:04:53.986" endtime="20210920 23:04:53.993"/>
+</kw>
+<status status="PASS" starttime="20210920 23:04:53.985" endtime="20210920 23:04:53.993"/>
+</kw>
+<status status="PASS" starttime="20210920 23:04:53.984" endtime="20210920 23:04:53.993"/>
+</kw>
+<kw name="E" library="cucumber-PTBr">
+<arg>clicar em "Consulte agora"</arg>
+<kw name="Run Keyword" library="BuiltIn">
+<arg>${keyword}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<kw name="clicar em &quot;Consulte agora&quot;" library="cenario_1Page" sourcename="clicar em &quot;${CONSULTE_AGORA}&quot;">
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>${CONSULTE_AGORA}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20210920 23:04:54.030" level="INFO">Current page contains text 'Consulte agora'.</msg>
+<status status="PASS" starttime="20210920 23:04:53.995" endtime="20210920 23:04:54.030"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${BOTAO_CONSULTA}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210920 23:04:54.031" level="INFO">Clicking element 'id=fragment-oimm-link'.</msg>
+<status status="PASS" starttime="20210920 23:04:54.030" endtime="20210920 23:04:56.915"/>
+</kw>
+<status status="PASS" starttime="20210920 23:04:53.994" endtime="20210920 23:04:56.916"/>
+</kw>
+<status status="PASS" starttime="20210920 23:04:53.994" endtime="20210920 23:04:56.916"/>
+</kw>
+<status status="PASS" starttime="20210920 23:04:53.993" endtime="20210920 23:04:56.916"/>
+</kw>
+<kw name="E" library="cucumber-PTBr">
+<arg>acessar a aba de "Busca detalhada"</arg>
+<kw name="Run Keyword" library="BuiltIn">
+<arg>${keyword}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<kw name="acessar a aba de &quot;Busca detalhada&quot;" library="cenario_1Page" sourcename="acessar a aba de &quot;${BUSCA_DETALHADA}&quot;">
+<kw name="Get Title" library="SeleniumLibrary">
+<var>${PAGE_TITLE}</var>
+<doc>Returns the title of the current page.</doc>
+<msg timestamp="20210920 23:04:56.939" level="INFO">${PAGE_TITLE} = Guia Médico - Site Institucional</msg>
+<status status="PASS" starttime="20210920 23:04:56.918" endtime="20210920 23:04:56.939"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${PAGE_TITLE}</arg>
+<arg>Guia Médico - Site Institucional</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20210920 23:04:56.940" endtime="20210920 23:04:56.940"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>${HEADING_TITLE}</arg>
+<arg>Encontre um médico</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20210920 23:04:57.016" level="INFO">Element 'xpath=//*/div/h1[@class="Heading--title"]' contains text 'Encontre um médico'.</msg>
+<status status="PASS" starttime="20210920 23:04:56.940" endtime="20210920 23:04:57.016"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>${HEADING_SUB_TITLE}</arg>
+<arg>E outros recursos da Unimed, sempre perto de você</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20210920 23:04:57.110" level="INFO">Element 'xpath=//*/div/h2[@class="Heading--sub-title"]' contains text 'E outros recursos da Unimed, sempre perto de você'.</msg>
+<status status="PASS" starttime="20210920 23:04:57.016" endtime="20210920 23:04:57.110"/>
+</kw>
+<status status="PASS" starttime="20210920 23:04:56.918" endtime="20210920 23:04:57.110"/>
+</kw>
+<status status="PASS" starttime="20210920 23:04:56.917" endtime="20210920 23:04:57.110"/>
+</kw>
+<status status="PASS" starttime="20210920 23:04:56.916" endtime="20210920 23:04:57.111"/>
+</kw>
+<kw name="Close session" library="driverFactory" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210920 23:04:57.112" endtime="20210920 23:04:59.202"/>
+</kw>
+<status status="PASS" starttime="20210920 23:04:57.111" endtime="20210920 23:04:59.203"/>
+</kw>
+<status status="PASS" starttime="20210920 23:04:40.878" endtime="20210920 23:04:59.203"/>
+</test>
+<doc>No site https://www.unimed.coop.br/ validar a seguinte sequência de ações</doc>
+<status status="PASS" starttime="20210920 23:04:40.555" endtime="20210920 23:04:59.205"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Cenario 1">Cenario 1</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
