@@ -18,3 +18,20 @@ ${BOTAO_PESQUISAR}          xpath=//*/button[@type="submit"][text()="Pesquisar"]
 ${TEXTO_BUSCA}              xpath=//*/span[@class="Text TotalFoundProviders"]
 
 ${LOCALIZACAO}              xpath=//*/div[@class="ProviderAddressColumn col-lg-7"]
+
+## Deve Selecionar Médico do estado do Rio de Janeiro
+${SELECIONA_MEDICO}         xpath=//*/input[@placeholder="Nome do médico ou prestador"]
+${MAIS_RESULTADOS}          xpath=//*[@id="gm-v3-root"]/div/div[2]/div[2]/div[1]/div[3]/button
+${MENSAGEM_RESULTADO}       xpath=//*[@id="gm-v3-root"]/div/div[2]/div[2]/div[1]/div[3]/span
+
+${LIMPAR_PESQUISA}          xpath=//*[@id="province-input"]/div/div[2]/div[1]
+
+${PESQUISAR_ESTADO}         xpath=//div[@id='react-select-9-option-24']/span
+
+${DROP_ESTADO}              xpath=//*[@id="province-input"]/div/div[2]
+
+${BOTAO_FILTRAR}            xpath=//*[@id="gm-v3-root"]/div/div[2]/div[1]/form/button
+
+${SAO_PAULO}                xpath=xpath=//div[25]/span
+
+${MENSAGEM_MEDICO_NAO_EXISTE}   xpath=//*[@id="NoContentResultList"]
