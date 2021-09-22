@@ -11,6 +11,7 @@ ${ANDROID_PLATFORM_VERSION}   %{ANDROID_PLATFORM_VERSION=10}
 
 *** Keywords ***
 Open Test Application
+  Set Appium Timeout    5
   Open Application  http://127.0.0.1:4723/wd/hub  automationName=${ANDROID_AUTOMATION_NAME}
   ...  platformName=${ANDROID_PLATFORM_NAME}  platformVersion=${ANDROID_PLATFORM_VERSION}
   ...  app=${ANDROID_APP}
