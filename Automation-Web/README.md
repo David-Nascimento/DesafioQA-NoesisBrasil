@@ -68,7 +68,7 @@ Cenario 03: Deve Pesquisar Médico do Estado do Rio de Janeiro em São Paulo
     Então     devo verificar que a busca não teve retorno de médicos
 ````
 
-Seguindo sempre a premissa da documentação -> [CENARIO]('https://github.com/David-Nascimento/DesafioQA-NoesisBrasil/blob/Develop/Automation-Web/documents/Desafio%201.pdf')
+Seguindo sempre a premissa da documentação -> [CENARIO](https://github.com/David-Nascimento/DesafioQA-NoesisBrasil/blob/Develop/Automation-Web/documents/Desafio%201.pdf)
 
 ### Execução dos Testes de cada cenario
 
@@ -90,9 +90,9 @@ O parametro ***-d ./logs/cenario03*** informa onde eu salvei os logs de execuç�
 O parametro ***"Cenario 01: Deve validar a apresentação dos resultados com a Especialidade e Cidade"*** é o cenário explicito. \
 O parametro **tests** é pasta onde está os meus casos de teste.
 
-#### Para visualizar os logs de execução vou deixar um link abaixo com cada pasta seguindo a ordem dos Casos de Testes. \
+#### Para visualizar os logs de execução vou deixar um link abaixo com cada pasta seguindo a ordem dos Casos de Testes.
 
-[Cenario 01]('https://github.com/David-Nascimento/DesafioQA-NoesisBrasil/tree/Develop/Automation-Web/logs/cenario01') \
-[Cenario 02]('https://github.com/David-Nascimento/DesafioQA-NoesisBrasil/tree/Develop/Automation-Web/logs/cenario02') \
-[Cenario 03]('https://github.com/David-Nascimento/DesafioQA-NoesisBrasil/tree/Develop/Automation-Web/logs/cenario03')
+[Cenario 01](https://github.com/David-Nascimento/DesafioQA-NoesisBrasil/tree/Develop/Automation-Web/logs/cenario01) \
+[Cenario 02](https://github.com/David-Nascimento/DesafioQA-NoesisBrasil/tree/Develop/Automation-Web/logs/cenario02) \
+[Cenario 03](https://github.com/David-Nascimento/DesafioQA-NoesisBrasil/tree/Develop/Automation-Web/logs/cenario03)
 
