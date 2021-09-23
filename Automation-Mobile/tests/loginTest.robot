@@ -11,18 +11,21 @@ Test Setup      Open Test Application
 Test Teardown   Close Test Application
 
 *** Test Cases ***
-      # [Tags]      senhaInvalida
+
 Deve tentar se autenticar com uma senha invalida
+      [Tags]      senhaInvalida
       Valida Tela de Login
       Senha Invalida
       Validar mensagem            Usuario e/ou senha incorreto
-#
-#   [Tag]      Cenario_01_LoginInvalido
-# Deve  acessar o aplicativo e validar a tela de login
-# Deve  inserir login invalido
-# Devo  Validar mensagem "Usuario e/ou senha incorreto."
-#
-#   [Tag]      Cenario_01_LoginSucess
-# Deve  acessar o aplicativo e validar a tela de login
-# Deve  inserir credenciais validas
-# Devo  Validar mensagem "Bem-vindo ao seu desafio!"
+
+Deve acessar o aplicativo e validar a tela de login
+      [Tags]       loginInvalido
+      Valida Tela de Login
+      login invalido
+      Validar mensagem            Usuario e/ou senha incorreto
+
+Deve acessar o aplicativo e validar a tela de login
+      [Tags]        loginSucesso
+      Valida Tela de Login
+      inserir credenciais validas
+      Validar mensagem login            Bem-vindo ao seu desafio!
