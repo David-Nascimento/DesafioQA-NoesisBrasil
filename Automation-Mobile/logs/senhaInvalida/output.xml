@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.1 (Python 3.9.7 on win32)" generated="20210922 23:14:20.627" rpa="false" schemaversion="2">
+<suite id="s1" name="loginTest" source="E:\Projetos\Desafio Noesis\Automation-Mobile\tests\loginTest.robot">
+<test id="s1-t1" name="Deve tentar se autenticar com uma senha invalida">
+<kw name="Open Test Application" library="appiumDriver" type="SETUP">
+<kw name="Set Appium Timeout" library="AppiumLibrary">
+<arg>5</arg>
+<doc>Sets the timeout in seconds used by various keywords.</doc>
+<status status="PASS" starttime="20210922 23:14:20.902" endtime="20210922 23:14:20.902"/>
+</kw>
+<kw name="Open Application" library="AppiumLibrary">
+<arg>http://127.0.0.1:4723/wd/hub</arg>
+<arg>automationName=${ANDROID_AUTOMATION_NAME}</arg>
+<arg>platformName=${ANDROID_PLATFORM_NAME}</arg>
+<arg>platformVersion=${ANDROID_PLATFORM_VERSION}</arg>
+<arg>app=${ANDROID_APP}</arg>
+<arg>deviceName=${ANDROID_DEVICE_NAME}</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |</doc>
+<status status="PASS" starttime="20210922 23:14:20.902" endtime="20210922 23:14:31.092"/>
+</kw>
+<status status="PASS" starttime="20210922 23:14:20.901" endtime="20210922 23:14:31.093"/>
+</kw>
+<kw name="Valida Tela de Login" library="loginTestPage">
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>${MENSAGEM_LOGIN}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" starttime="20210922 23:14:31.093" endtime="20210922 23:14:33.022"/>
+</kw>
+<kw name="Get Text" library="AppiumLibrary">
+<var>${BEM_VINDO}</var>
+<arg>${MENSAGEM_LOGIN}</arg>
+<doc>Get element text (for hybrid and mobile browser use `xpath` locator, others might cause problem)</doc>
+<msg timestamp="20210922 23:14:33.092" level="INFO">Element 'xpath=//*/android.view.ViewGroup[2]/android.widget.TextView[1]' text is 'Olá, vamos testar o Login?' </msg>
+<msg timestamp="20210922 23:14:33.093" level="INFO">${BEM_VINDO} = Olá, vamos testar o Login?</msg>
+<status status="PASS" starttime="20210922 23:14:33.022" endtime="20210922 23:14:33.093"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${BEM_VINDO}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210922 23:14:33.093" level="INFO">Olá, vamos testar o Login?</msg>
+<status status="PASS" starttime="20210922 23:14:33.093" endtime="20210922 23:14:33.093"/>
+</kw>
+<kw name="Element Should Contain Text" library="AppiumLibrary">
+<arg>${MENSAGEM_LOGIN}</arg>
+<arg>Olá, vamos testar o Login?</arg>
+<doc>Verifies element identified by ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20210922 23:14:33.096" level="INFO">Verifying element 'xpath=//*/android.view.ViewGroup[2]/android.widget.TextView[1]' contains text 'Olá, vamos testar o Login?'.</msg>
+<status status="PASS" starttime="20210922 23:14:33.093" endtime="20210922 23:14:33.163"/>
+</kw>
+<status status="PASS" starttime="20210922 23:14:31.093" endtime="20210922 23:14:33.163"/>
+</kw>
+<kw name="Senha Invalida" library="loginTestPage">
+<kw name="Input Text" library="AppiumLibrary">
+<arg>${LOGIN}</arg>
+<arg>admin</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20210922 23:14:33.166" level="INFO">Typing text 'admin' into text field 'xpath=//*/android.view.ViewGroup[2]/android.view.ViewGroup[1]/android.widget.EditText'</msg>
+<status status="PASS" starttime="20210922 23:14:33.164" endtime="20210922 23:14:33.756"/>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>${SENHA}</arg>
+<arg>123456</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20210922 23:14:33.759" level="INFO">Typing text '123456' into text field 'xpath=//*/android.view.ViewGroup[2]/android.view.ViewGroup[2]/android.widget.EditText'</msg>
+<status status="PASS" starttime="20210922 23:14:33.757" endtime="20210922 23:14:34.784"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${SUBMIT}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20210922 23:14:34.788" level="INFO">Clicking element 'xpath=//*/android.view.ViewGroup[2]/android.view.ViewGroup[3]/android.widget.Button'.</msg>
+<status status="PASS" starttime="20210922 23:14:34.785" endtime="20210922 23:14:35.321"/>
+</kw>
+<status status="PASS" starttime="20210922 23:14:33.163" endtime="20210922 23:14:35.321"/>
+</kw>
+<kw name="Validar mensagem" library="loginTestPage">
+<arg>Usuario e/ou senha incorreto</arg>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>${ALERTA_MENSAGEM}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" starttime="20210922 23:14:35.322" endtime="20210922 23:14:35.985"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210922 23:14:37.987" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210922 23:14:35.985" endtime="20210922 23:14:37.987"/>
+</kw>
+<kw name="Get Text" library="AppiumLibrary">
+<var>${MENSAGEM_ATUAL}</var>
+<arg>${ALERTA_MENSAGEM}</arg>
+<doc>Get element text (for hybrid and mobile browser use `xpath` locator, others might cause problem)</doc>
+<msg timestamp="20210922 23:14:38.028" level="INFO">Element 'id=android:id/alertTitle' text is 'Usuario e/ou senha incorreto' </msg>
+<msg timestamp="20210922 23:14:38.028" level="INFO">${MENSAGEM_ATUAL} = Usuario e/ou senha incorreto</msg>
+<status status="PASS" starttime="20210922 23:14:37.987" endtime="20210922 23:14:38.028"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${MENSAGEM_ATUAL}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210922 23:14:38.029" level="INFO">Usuario e/ou senha incorreto</msg>
+<status status="PASS" starttime="20210922 23:14:38.028" endtime="20210922 23:14:38.029"/>
+</kw>
+<kw name="Element Text Should Be" library="AppiumLibrary">
+<arg>${ALERTA_MENSAGEM}</arg>
+<arg>${MENSAGEM_ESPERADA}</arg>
+<doc>Verifies element identified by ``locator`` exactly contains text ``expected``.</doc>
+<msg timestamp="20210922 23:14:38.032" level="INFO">Verifying element 'id=android:id/alertTitle' contains exactly text 'Usuario e/ou senha incorreto'.</msg>
+<status status="PASS" starttime="20210922 23:14:38.029" endtime="20210922 23:14:38.074"/>
+</kw>
+<kw name="Page Should Contain Text" library="AppiumLibrary">
+<arg>${MENSAGEM_ATUAL}</arg>
+<doc>Verifies that current page contains `text`.</doc>
+<msg timestamp="20210922 23:14:38.168" level="INFO">Current page contains text 'Usuario e/ou senha incorreto'.</msg>
+<status status="PASS" starttime="20210922 23:14:38.074" endtime="20210922 23:14:38.168"/>
+</kw>
+<status status="PASS" starttime="20210922 23:14:35.322" endtime="20210922 23:14:38.168"/>
+</kw>
+<kw name="Close Test Application" library="appiumDriver" type="TEARDOWN">
+<kw name="Close Application" library="AppiumLibrary">
+<doc>Closes the current application and also close webdriver session.</doc>
+<status status="PASS" starttime="20210922 23:14:38.169" endtime="20210922 23:14:38.612"/>
+</kw>
+<status status="PASS" starttime="20210922 23:14:38.168" endtime="20210922 23:14:38.613"/>
+</kw>
+<tag>senhaInvalida</tag>
+<status status="PASS" starttime="20210922 23:14:20.901" endtime="20210922 23:14:38.613"/>
+</test>
+<doc>O desafio consiste em criar um projeto de automação mobile, para um APK Android.</doc>
+<status status="PASS" starttime="20210922 23:14:20.629" endtime="20210922 23:14:38.614"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">senhaInvalida</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="loginTest">loginTest</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
