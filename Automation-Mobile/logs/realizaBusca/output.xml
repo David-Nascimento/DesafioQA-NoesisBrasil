@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.1 (Python 3.9.7 on win32)" generated="20210923 21:33:25.956" rpa="false" schemaversion="2">
+<suite id="s1" name="Tests" source="E:\Projetos\Desafio Noesis\Automation-Mobile\tests">
+<suite id="s1-s1" name="listaTest" source="E:\Projetos\Desafio Noesis\Automation-Mobile\tests\listaTest.robot">
+<test id="s1-s1-t1" name="Deve Realizar busca ma na barra de pesquisa">
+<kw name="Open Test Application" library="appiumDriver" type="SETUP">
+<kw name="Set Appium Timeout" library="AppiumLibrary">
+<arg>5</arg>
+<doc>Sets the timeout in seconds used by various keywords.</doc>
+<status status="PASS" starttime="20210923 21:33:26.230" endtime="20210923 21:33:26.230"/>
+</kw>
+<kw name="Open Application" library="AppiumLibrary">
+<arg>http://127.0.0.1:4723/wd/hub</arg>
+<arg>automationName=${ANDROID_AUTOMATION_NAME}</arg>
+<arg>platformName=${ANDROID_PLATFORM_NAME}</arg>
+<arg>platformVersion=${ANDROID_PLATFORM_VERSION}</arg>
+<arg>app=${ANDROID_APP}</arg>
+<arg>deviceName=${ANDROID_DEVICE_NAME}</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |</doc>
+<status status="PASS" starttime="20210923 21:33:26.231" endtime="20210923 21:33:36.546"/>
+</kw>
+<status status="PASS" starttime="20210923 21:33:26.229" endtime="20210923 21:33:36.547"/>
+</kw>
+<kw name="Realiza login" library="listaTestPage">
+<arg>Bem-vindo ao seu desafio!</arg>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>${MENSAGEM_LOGIN}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" starttime="20210923 21:33:36.548" endtime="20210923 21:33:38.866"/>
+</kw>
+<kw name="Get Text" library="AppiumLibrary">
+<var>${BEM_VINDO}</var>
+<arg>${MENSAGEM_LOGIN}</arg>
+<doc>Get element text (for hybrid and mobile browser use `xpath` locator, others might cause problem)</doc>
+<msg timestamp="20210923 21:33:38.939" level="INFO">Element 'xpath=//*/android.view.ViewGroup[2]/android.widget.TextView[1]' text is 'Olá, vamos testar o Login?' </msg>
+<msg timestamp="20210923 21:33:38.939" level="INFO">${BEM_VINDO} = Olá, vamos testar o Login?</msg>
+<status status="PASS" starttime="20210923 21:33:38.866" endtime="20210923 21:33:38.939"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${BEM_VINDO}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210923 21:33:38.940" level="INFO">Olá, vamos testar o Login?</msg>
+<status status="PASS" starttime="20210923 21:33:38.939" endtime="20210923 21:33:38.940"/>
+</kw>
+<kw name="Element Should Contain Text" library="AppiumLibrary">
+<arg>${MENSAGEM_LOGIN}</arg>
+<arg>Olá, vamos testar o Login?</arg>
+<doc>Verifies element identified by ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20210923 21:33:38.943" level="INFO">Verifying element 'xpath=//*/android.view.ViewGroup[2]/android.widget.TextView[1]' contains text 'Olá, vamos testar o Login?'.</msg>
+<status status="PASS" starttime="20210923 21:33:38.940" endtime="20210923 21:33:39.012"/>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>${LOGIN}</arg>
+<arg>admin</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20210923 21:33:39.015" level="INFO">Typing text 'admin' into text field 'xpath=//*/android.view.ViewGroup[2]/android.view.ViewGroup[1]/android.widget.EditText'</msg>
+<status status="PASS" starttime="20210923 21:33:39.013" endtime="20210923 21:33:39.131"/>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>${SENHA}</arg>
+<arg>admin</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20210923 21:33:39.135" level="INFO">Typing text 'admin' into text field 'xpath=//*/android.view.ViewGroup[2]/android.view.ViewGroup[2]/android.widget.EditText'</msg>
+<status status="PASS" starttime="20210923 21:33:39.132" endtime="20210923 21:33:39.708"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${SUBMIT}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20210923 21:33:39.713" level="INFO">Clicking element 'xpath=//*/android.view.ViewGroup[2]/android.view.ViewGroup[3]/android.widget.Button'.</msg>
+<status status="PASS" starttime="20210923 21:33:39.709" endtime="20210923 21:33:40.295"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>${BOAS_VINDAS}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" starttime="20210923 21:33:40.295" endtime="20210923 21:33:40.365"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210923 21:33:42.366" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210923 21:33:40.365" endtime="20210923 21:33:42.366"/>
+</kw>
+<kw name="Get Text" library="AppiumLibrary">
+<var>${MENSAGEM_ATUAL}</var>
+<arg>${BOAS_VINDAS}</arg>
+<doc>Get element text (for hybrid and mobile browser use `xpath` locator, others might cause problem)</doc>
+<msg timestamp="20210923 21:33:42.511" level="INFO">Element 'xpath=//*/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.TextView[1]' text is 'Bem-vindo ao seu desafio!' </msg>
+<msg timestamp="20210923 21:33:42.511" level="INFO">${MENSAGEM_ATUAL} = Bem-vindo ao seu desafio!</msg>
+<status status="PASS" starttime="20210923 21:33:42.366" endtime="20210923 21:33:42.511"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${MENSAGEM_ATUAL}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210923 21:33:42.512" level="INFO">Bem-vindo ao seu desafio!</msg>
+<status status="PASS" starttime="20210923 21:33:42.512" endtime="20210923 21:33:42.512"/>
+</kw>
+<kw name="Element Text Should Be" library="AppiumLibrary">
+<arg>${BOAS_VINDAS}</arg>
+<arg>${MENSAGEM_ESPERADA}</arg>
+<doc>Verifies element identified by ``locator`` exactly contains text ``expected``.</doc>
+<msg timestamp="20210923 21:33:42.515" level="INFO">Verifying element 'xpath=//*/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.TextView[1]' contains exactly text 'Bem-vindo ao seu desafio!'.</msg>
+<status status="PASS" starttime="20210923 21:33:42.512" endtime="20210923 21:33:42.605"/>
+</kw>
+<kw name="Page Should Contain Text" library="AppiumLibrary">
+<arg>${MENSAGEM_ATUAL}</arg>
+<doc>Verifies that current page contains `text`.</doc>
+<msg timestamp="20210923 21:33:42.772" level="INFO">Current page contains text 'Bem-vindo ao seu desafio!'.</msg>
+<status status="PASS" starttime="20210923 21:33:42.606" endtime="20210923 21:33:42.772"/>
+</kw>
+<status status="PASS" starttime="20210923 21:33:36.547" endtime="20210923 21:33:42.772"/>
+</kw>
+<kw name="Acessar o menu" library="listaTestPage">
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>${NAV_MENU}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" starttime="20210923 21:33:42.773" endtime="20210923 21:33:42.852"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${NAV_MENU}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20210923 21:33:42.855" level="INFO">Clicking element 'xpath=//*/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.TextView'.</msg>
+<status status="PASS" starttime="20210923 21:33:42.853" endtime="20210923 21:33:42.967"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210923 21:33:44.969" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210923 21:33:42.967" endtime="20210923 21:33:44.969"/>
+</kw>
+<kw name="Get Text" library="AppiumLibrary">
+<var>${NOME_EXPERADO}</var>
+<arg>${NOME_PESSOA}</arg>
+<doc>Get element text (for hybrid and mobile browser use `xpath` locator, others might cause problem)</doc>
+<msg timestamp="20210923 21:33:45.086" level="INFO">Element 'xpath=//*/android.view.ViewGroup[1]/android.widget.ScrollView/android.view.ViewGroup/android.widget.TextView[1]' text is 'Joao da Silva' </msg>
+<msg timestamp="20210923 21:33:45.086" level="INFO">${NOME_EXPERADO} = Joao da Silva</msg>
+<status status="PASS" starttime="20210923 21:33:44.969" endtime="20210923 21:33:45.086"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210923 21:33:47.088" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210923 21:33:45.086" endtime="20210923 21:33:47.088"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${NOME_EXPERADO}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210923 21:33:47.089" level="INFO">Joao da Silva</msg>
+<status status="PASS" starttime="20210923 21:33:47.089" endtime="20210923 21:33:47.090"/>
+</kw>
+<kw name="Element Text Should Be" library="AppiumLibrary">
+<arg>${NOME_PESSOA}</arg>
+<arg>Joao da Silva</arg>
+<doc>Verifies element identified by ``locator`` exactly contains text ``expected``.</doc>
+<msg timestamp="20210923 21:33:47.094" level="INFO">Verifying element 'xpath=//*/android.view.ViewGroup[1]/android.widget.ScrollView/android.view.ViewGroup/android.widget.TextView[1]' contains exactly text 'Joao da Silva'.</msg>
+<status status="PASS" starttime="20210923 21:33:47.090" endtime="20210923 21:33:47.197"/>
+</kw>
+<status status="PASS" starttime="20210923 21:33:42.773" endtime="20210923 21:33:47.197"/>
+</kw>
+<kw name="Acessar a opção Lista" library="listaTestPage">
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${NAV_LISTA}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20210923 21:33:47.201" level="INFO">Clicking element 'xpath=//*/android.view.ViewGroup[1]/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[3]'.</msg>
+<status status="PASS" starttime="20210923 21:33:47.198" endtime="20210923 21:33:47.325"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>${BUSCA_PESSOA}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" starttime="20210923 21:33:47.326" endtime="20210923 21:33:49.637"/>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>${BUSCA_PESSOA}</arg>
+<arg>An</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20210923 21:33:49.640" level="INFO">Typing text 'An' into text field 'xpath=//*/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.widget.EditText'</msg>
+<status status="PASS" starttime="20210923 21:33:49.637" endtime="20210923 21:33:50.273"/>
+</kw>
+<status status="PASS" starttime="20210923 21:33:47.197" endtime="20210923 21:33:50.273"/>
+</kw>
+<kw name="Validar busca" library="listaTestPage">
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>${RESULTADO_BUSCA}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" starttime="20210923 21:33:50.274" endtime="20210923 21:33:51.036"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${RESULTADO_BUSCA}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210923 21:33:51.037" level="INFO">xpath=//*/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup[1]/android.widget.TextView[1]</msg>
+<status status="PASS" starttime="20210923 21:33:51.036" endtime="20210923 21:33:51.037"/>
+</kw>
+<kw name="Get Text" library="AppiumLibrary">
+<var>${text}</var>
+<arg>${RESULTADO_BUSCA}</arg>
+<doc>Get element text (for hybrid and mobile browser use `xpath` locator, others might cause problem)</doc>
+<msg timestamp="20210923 21:33:51.130" level="INFO">Element 'xpath=//*/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup[1]/android.widget.TextView[1]' text is 'Jansénio Silveira' </msg>
+<msg timestamp="20210923 21:33:51.130" level="INFO">${text} = Jansénio Silveira</msg>
+<status status="PASS" starttime="20210923 21:33:51.037" endtime="20210923 21:33:51.130"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210923 21:33:51.130" level="INFO">Jansénio Silveira</msg>
+<status status="PASS" starttime="20210923 21:33:51.130" endtime="20210923 21:33:51.130"/>
+</kw>
+<kw name="Element Should Be Visible" library="AppiumLibrary">
+<arg>${RESULTADO_BUSCA}</arg>
+<doc>Verifies that element identified with locator is visible.</doc>
+<status status="PASS" starttime="20210923 21:33:51.131" endtime="20210923 21:33:51.200"/>
+</kw>
+<kw name="Page Should Contain Element" library="AppiumLibrary">
+<arg>${RESULTADO_BUSCA}</arg>
+<doc>Verifies that current page contains `locator` element.</doc>
+<msg timestamp="20210923 21:33:51.264" level="INFO">Current page contains element 'xpath=//*/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup[1]/android.widget.TextView[1]'.</msg>
+<status status="PASS" starttime="20210923 21:33:51.200" endtime="20210923 21:33:51.264"/>
+</kw>
+<status status="PASS" starttime="20210923 21:33:50.273" endtime="20210923 21:33:51.264"/>
+</kw>
+<kw name="Close Test Application" library="appiumDriver" type="TEARDOWN">
+<kw name="Close Application" library="AppiumLibrary">
+<doc>Closes the current application and also close webdriver session.</doc>
+<status status="PASS" starttime="20210923 21:33:51.265" endtime="20210923 21:33:51.646"/>
+</kw>
+<status status="PASS" starttime="20210923 21:33:51.265" endtime="20210923 21:33:51.647"/>
+</kw>
+<tag>realizaBusca</tag>
+<status status="PASS" starttime="20210923 21:33:26.229" endtime="20210923 21:33:51.647"/>
+</test>
+<doc>O desafio consiste em criar um projeto de automação mobile, para um APK Android.</doc>
+<status status="PASS" starttime="20210923 21:33:25.996" endtime="20210923 21:33:51.648"/>
+</suite>
+<status status="PASS" starttime="20210923 21:33:25.958" endtime="20210923 21:33:51.650"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">realizaBusca</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Tests">Tests</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="listaTest">Tests.listaTest</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
