@@ -12,14 +12,14 @@ Valida Tela de Login
     Element Should Contain Text   ${MENSAGEM_LOGIN}    Olá, vamos testar o Login?
 
 login invalido
-  Input Text    ${LOGIN}    adm
-  Input Text    ${SENHA}    admin
+    Run Keyword And Ignore Error    Input Text    ${LOGIN}    adm
+    Input Text    ${SENHA}    admin
 
-  Click Element    ${SUBMIT}
+    Click Element    ${SUBMIT}
 
 Senha Invalida
     Input Text    ${LOGIN}    admin
-    Input Text    ${SENHA}    123456
+    Run Keyword And Ignore Error    Input Text    ${SENHA}    123456
 
     Click Element    ${SUBMIT}
 
