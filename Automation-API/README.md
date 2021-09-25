@@ -60,4 +60,17 @@ Idioma do filme
   Confere Idioma do Filme   English, French
 ````
 
-Seguindo sempre a premissa da documentação -> [CENARIO]()
+Seguindo sempre a premissa da documentação -> [CENARIO](https://github.com/David-Nascimento/DesafioQA-NoesisBrasil/blob/Develop/Automation-API/documents/Desafio%202.pdf)
+
+Utilizando Argumentos e variaveis Globais para validar as requisições.
+
+### Execução dos Testes de cada cenario
+````
+robot -d ./logs tests/TS_Caso01.robot
+````
+
+#### Para visualizar os logs de execução vou deixar um link abaixo com cada pasta seguindo a ordem dos Casos de Testes.
+[CASO_01](https://github.com/David-Nascimento/DesafioQA-NoesisBrasil/tree/Develop/Automation-API/logs/TituloFilme)
+[CASO_02](https://github.com/David-Nascimento/DesafioQA-NoesisBrasil/tree/Develop/Automation-API/logs/FilmeNaoExiste)
+
+[GITFLOW](https://github.com/David-Nascimento/DesafioQA-NoesisBrasil/commits/Develop/Automation-API)
