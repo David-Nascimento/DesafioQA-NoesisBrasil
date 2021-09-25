@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.1 (Python 3.9.7 on win32)" generated="20210925 19:18:26.178" rpa="false" schemaversion="2">
+<suite id="s1" name="Tests" source="E:\Projetos\Desafio Noesis\Automation-API\tests">
+<suite id="s1-s1" name="TS Caso01" source="E:\Projetos\Desafio Noesis\Automation-API\tests\TS_Caso01.robot">
+<kw name="Conectar a API" library="hookApi" type="SETUP">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>omdbapi</arg>
+<arg>${API_URL}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20210925 19:18:26.364" level="INFO">Creating Session using : alias=omdbapi, url=http://www.omdbapi.com/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20210925 19:18:26.363" endtime="20210925 19:18:26.365"/>
+</kw>
+<kw name="Get Request" library="RequestsLibrary">
+<var>${RESPOSTA}</var>
+<arg>omdbapi</arg>
+<arg>${ID_DO_FILM}${API_KEY}</arg>
+<doc>*DEPRECATED* Please use `GET On Session` instead.</doc>
+<msg timestamp="20210925 19:18:26.366" level="WARN">Keyword 'RequestsLibrary.Get Request' is deprecated. Please use `GET On Session` instead.</msg>
+<msg timestamp="20210925 19:18:26.407" level="INFO">GET Request : url=http://www.omdbapi.com/?i=tt1285016&amp;apikey=52ec71bf 
+ path_url=/?i=tt1285016&amp;apikey=52ec71bf 
+ headers={'User-Agent': 'python-requests/2.26.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20210925 19:18:26.407" level="INFO">GET Response : url=http://www.omdbapi.com/?i=tt1285016&amp;apikey=52ec71bf 
+ status=200, reason=OK 
+ headers={'Date': 'Sat, 25 Sep 2021 22:18:30 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Cache-Control': 'public, max-age=86400', 'Expires': 'Sat, 25 Sep 2021 01:54:49 GMT', 'Last-Modified': 'Sat, 25 Sep 2021 00:54:49 GMT', 'Vary': '*, Accept-Encoding', 'X-AspNet-Version': '4.0.30319', 'X-Powered-By': 'ASP.NET', 'Access-Control-Allow-Origin': '*', 'CF-Cache-Status': 'HIT', 'Age': '77021', 'Server': 'cloudflare', 'CF-RAY': '6947a0f4db462737-FOR', 'Content-Encoding': 'gzip'} 
+ body={"Title":"The Social Network","Year":"2010","Rated":"PG-13","Released":"01 Oct 2010","Runtime":"120 min","Genre":"Biography, Drama","Director":"David Fincher","Writer":"Aaron Sorkin, Ben Mezrich","Actors":"Jesse Eisenberg, Andrew Garfield, Justin Timberlake","Plot":"As Harvard student Mark Zuckerberg creates the social networking site that would become known as Facebook, he is sued by the twins who claimed he stole their idea, and by the co-founder who was later squeezed out of the business.","Language":"English, French","Country":"United States","Awards":"Won 3 Oscars. 172 wins &amp; 186 nominations total","Poster":"https://m.media-amazon.com/images/M/MV5BOGUyZDUxZjEtMmIzMC00MzlmLTg4MGItZWJmMzBhZjE0Mjc1XkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SX300.jpg","Ratings":[{"Source":"Internet Movie Database","Value":"7.7/10"},{"Source":"Rotten Tomatoes","Value":"96%"},{"Source":"Metacritic","Value":"95/100"}],"Metascore":"95","imdbRating":"7.7","imdbVotes":"653,830","imdbID":"tt1285016","Type":"movie","DVD":"11 Jan 2011","BoxOffice":"$96,962,694","Production":"Scott Rudin Productions, Trigger Street Productions, Michael De Luca","Website":"N/A","Response":"True"} 
+ </msg>
+<msg timestamp="20210925 19:18:26.408" level="INFO">${RESPOSTA} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20210925 19:18:26.365" endtime="20210925 19:18:26.408"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${RESPOSTA}</arg>
+<arg>${RESPOSTA}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20210925 19:18:26.409" level="INFO">${RESPOSTA} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20210925 19:18:26.408" endtime="20210925 19:18:26.409"/>
+</kw>
+<status status="PASS" starttime="20210925 19:18:26.362" endtime="20210925 19:18:26.409"/>
+</kw>
+<test id="s1-s1-t1" name="Titulo do Filme">
+<kw name="Confere Status Code" library="omdbapiGet">
+<arg>200</arg>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${RESPOSTA.status_code}</arg>
+<arg>${200}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<msg timestamp="20210925 19:18:26.411" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" starttime="20210925 19:18:26.410" endtime="20210925 19:18:26.412"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${RESPOSTA.status_code}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210925 19:18:26.413" level="INFO">200</msg>
+<status status="PASS" starttime="20210925 19:18:26.412" endtime="20210925 19:18:26.413"/>
+</kw>
+<status status="PASS" starttime="20210925 19:18:26.410" endtime="20210925 19:18:26.413"/>
+</kw>
+<kw name="Confere Reason" library="omdbapiGet">
+<arg>OK</arg>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${RESPOSTA.reason}</arg>
+<arg>${OK}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20210925 19:18:26.414" endtime="20210925 19:18:26.415"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${RESPOSTA.reason}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210925 19:18:26.416" level="INFO">OK</msg>
+<status status="PASS" starttime="20210925 19:18:26.415" endtime="20210925 19:18:26.417"/>
+</kw>
+<status status="PASS" starttime="20210925 19:18:26.414" endtime="20210925 19:18:26.417"/>
+</kw>
+<kw name="Confere se retorna 25 Filmes" library="omdbapiGet" sourcename="Confere se retorna ${QTDE_FILMES} Filmes">
+<kw name="Length Should Be" library="BuiltIn">
+<arg>${RESPOSTA.json()}</arg>
+<arg>${QTDE_FILMES}</arg>
+<doc>Verifies that the length of the given item is correct.</doc>
+<msg timestamp="20210925 19:18:26.419" level="INFO">Length is 25</msg>
+<status status="PASS" starttime="20210925 19:18:26.418" endtime="20210925 19:18:26.419"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${RESPOSTA.text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210925 19:18:26.420" level="INFO">{"Title":"The Social Network","Year":"2010","Rated":"PG-13","Released":"01 Oct 2010","Runtime":"120 min","Genre":"Biography, Drama","Director":"David Fincher","Writer":"Aaron Sorkin, Ben Mezrich","Actors":"Jesse Eisenberg, Andrew Garfield, Justin Timberlake","Plot":"As Harvard student Mark Zuckerberg creates the social networking site that would become known as Facebook, he is sued by the twins who claimed he stole their idea, and by the co-founder who was later squeezed out of the business.","Language":"English, French","Country":"United States","Awards":"Won 3 Oscars. 172 wins &amp; 186 nominations total","Poster":"https://m.media-amazon.com/images/M/MV5BOGUyZDUxZjEtMmIzMC00MzlmLTg4MGItZWJmMzBhZjE0Mjc1XkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SX300.jpg","Ratings":[{"Source":"Internet Movie Database","Value":"7.7/10"},{"Source":"Rotten Tomatoes","Value":"96%"},{"Source":"Metacritic","Value":"95/100"}],"Metascore":"95","imdbRating":"7.7","imdbVotes":"653,830","imdbID":"tt1285016","Type":"movie","DVD":"11 Jan 2011","BoxOffice":"$96,962,694","Production":"Scott Rudin Productions, Trigger Street Productions, Michael De Luca","Website":"N/A","Response":"True"}</msg>
+<status status="PASS" starttime="20210925 19:18:26.419" endtime="20210925 19:18:26.420"/>
+</kw>
+<status status="PASS" starttime="20210925 19:18:26.417" endtime="20210925 19:18:26.421"/>
+</kw>
+<kw name="Confere Titulo do Filme" library="omdbapiGet">
+<arg>The Social Network</arg>
+<kw name="Dictionary Should Contain Item" library="Collections">
+<arg>${RESPOSTA.json()}</arg>
+<arg>Title</arg>
+<arg>${FILME_TSW.Title}</arg>
+<doc>An item of ``key`` / ``value`` must be found in a ``dictionary``.</doc>
+<status status="PASS" starttime="20210925 19:18:26.422" endtime="20210925 19:18:26.423"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${FILME_TSW.Title}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210925 19:18:26.424" level="INFO">The Social Network</msg>
+<status status="PASS" starttime="20210925 19:18:26.424" endtime="20210925 19:18:26.425"/>
+</kw>
+<status status="PASS" starttime="20210925 19:18:26.421" endtime="20210925 19:18:26.425"/>
+</kw>
+<status status="PASS" starttime="20210925 19:18:26.409" endtime="20210925 19:18:26.425"/>
+</test>
+<test id="s1-s1-t2" name="Ano do Filme">
+<kw name="Confere Status Code" library="omdbapiGet">
+<arg>200</arg>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${RESPOSTA.status_code}</arg>
+<arg>${200}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<msg timestamp="20210925 19:18:26.429" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" starttime="20210925 19:18:26.428" endtime="20210925 19:18:26.429"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${RESPOSTA.status_code}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210925 19:18:26.430" level="INFO">200</msg>
+<status status="PASS" starttime="20210925 19:18:26.429" endtime="20210925 19:18:26.430"/>
+</kw>
+<status status="PASS" starttime="20210925 19:18:26.427" endtime="20210925 19:18:26.430"/>
+</kw>
+<kw name="Confere Reason" library="omdbapiGet">
+<arg>OK</arg>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${RESPOSTA.reason}</arg>
+<arg>${OK}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20210925 19:18:26.431" endtime="20210925 19:18:26.432"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${RESPOSTA.reason}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210925 19:18:26.433" level="INFO">OK</msg>
+<status status="PASS" starttime="20210925 19:18:26.432" endtime="20210925 19:18:26.433"/>
+</kw>
+<status status="PASS" starttime="20210925 19:18:26.431" endtime="20210925 19:18:26.434"/>
+</kw>
+<kw name="Confere se retorna 25 Filmes" library="omdbapiGet" sourcename="Confere se retorna ${QTDE_FILMES} Filmes">
+<kw name="Length Should Be" library="BuiltIn">
+<arg>${RESPOSTA.json()}</arg>
+<arg>${QTDE_FILMES}</arg>
+<doc>Verifies that the length of the given item is correct.</doc>
+<msg timestamp="20210925 19:18:26.435" level="INFO">Length is 25</msg>
+<status status="PASS" starttime="20210925 19:18:26.434" endtime="20210925 19:18:26.436"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${RESPOSTA.text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210925 19:18:26.437" level="INFO">{"Title":"The Social Network","Year":"2010","Rated":"PG-13","Released":"01 Oct 2010","Runtime":"120 min","Genre":"Biography, Drama","Director":"David Fincher","Writer":"Aaron Sorkin, Ben Mezrich","Actors":"Jesse Eisenberg, Andrew Garfield, Justin Timberlake","Plot":"As Harvard student Mark Zuckerberg creates the social networking site that would become known as Facebook, he is sued by the twins who claimed he stole their idea, and by the co-founder who was later squeezed out of the business.","Language":"English, French","Country":"United States","Awards":"Won 3 Oscars. 172 wins &amp; 186 nominations total","Poster":"https://m.media-amazon.com/images/M/MV5BOGUyZDUxZjEtMmIzMC00MzlmLTg4MGItZWJmMzBhZjE0Mjc1XkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SX300.jpg","Ratings":[{"Source":"Internet Movie Database","Value":"7.7/10"},{"Source":"Rotten Tomatoes","Value":"96%"},{"Source":"Metacritic","Value":"95/100"}],"Metascore":"95","imdbRating":"7.7","imdbVotes":"653,830","imdbID":"tt1285016","Type":"movie","DVD":"11 Jan 2011","BoxOffice":"$96,962,694","Production":"Scott Rudin Productions, Trigger Street Productions, Michael De Luca","Website":"N/A","Response":"True"}</msg>
+<status status="PASS" starttime="20210925 19:18:26.436" endtime="20210925 19:18:26.437"/>
+</kw>
+<status status="PASS" starttime="20210925 19:18:26.434" endtime="20210925 19:18:26.437"/>
+</kw>
+<kw name="Confere ano do Filme" library="omdbapiGet">
+<arg>2010</arg>
+<kw name="Dictionary Should Contain Item" library="Collections">
+<arg>${RESPOSTA.json()}</arg>
+<arg>Year</arg>
+<arg>${FILME_TSW.Year}</arg>
+<doc>An item of ``key`` / ``value`` must be found in a ``dictionary``.</doc>
+<status status="PASS" starttime="20210925 19:18:26.438" endtime="20210925 19:18:26.439"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${FILME_TSW.Year}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210925 19:18:26.440" level="INFO">2010</msg>
+<status status="PASS" starttime="20210925 19:18:26.440" endtime="20210925 19:18:26.441"/>
+</kw>
+<status status="PASS" starttime="20210925 19:18:26.437" endtime="20210925 19:18:26.441"/>
+</kw>
+<status status="PASS" starttime="20210925 19:18:26.427" endtime="20210925 19:18:26.441"/>
+</test>
+<test id="s1-s1-t3" name="Idioma do filme">
+<kw name="Confere Status Code" library="omdbapiGet">
+<arg>200</arg>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${RESPOSTA.status_code}</arg>
+<arg>${200}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<msg timestamp="20210925 19:18:26.444" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" starttime="20210925 19:18:26.443" endtime="20210925 19:18:26.444"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${RESPOSTA.status_code}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210925 19:18:26.445" level="INFO">200</msg>
+<status status="PASS" starttime="20210925 19:18:26.445" endtime="20210925 19:18:26.446"/>
+</kw>
+<status status="PASS" starttime="20210925 19:18:26.443" endtime="20210925 19:18:26.446"/>
+</kw>
+<kw name="Confere Reason" library="omdbapiGet">
+<arg>OK</arg>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${RESPOSTA.reason}</arg>
+<arg>${OK}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20210925 19:18:26.447" endtime="20210925 19:18:26.448"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${RESPOSTA.reason}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210925 19:18:26.449" level="INFO">OK</msg>
+<status status="PASS" starttime="20210925 19:18:26.448" endtime="20210925 19:18:26.449"/>
+</kw>
+<status status="PASS" starttime="20210925 19:18:26.446" endtime="20210925 19:18:26.449"/>
+</kw>
+<kw name="Confere se retorna 25 Filmes" library="omdbapiGet" sourcename="Confere se retorna ${QTDE_FILMES} Filmes">
+<kw name="Length Should Be" library="BuiltIn">
+<arg>${RESPOSTA.json()}</arg>
+<arg>${QTDE_FILMES}</arg>
+<doc>Verifies that the length of the given item is correct.</doc>
+<msg timestamp="20210925 19:18:26.451" level="INFO">Length is 25</msg>
+<status status="PASS" starttime="20210925 19:18:26.450" endtime="20210925 19:18:26.451"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${RESPOSTA.text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210925 19:18:26.452" level="INFO">{"Title":"The Social Network","Year":"2010","Rated":"PG-13","Released":"01 Oct 2010","Runtime":"120 min","Genre":"Biography, Drama","Director":"David Fincher","Writer":"Aaron Sorkin, Ben Mezrich","Actors":"Jesse Eisenberg, Andrew Garfield, Justin Timberlake","Plot":"As Harvard student Mark Zuckerberg creates the social networking site that would become known as Facebook, he is sued by the twins who claimed he stole their idea, and by the co-founder who was later squeezed out of the business.","Language":"English, French","Country":"United States","Awards":"Won 3 Oscars. 172 wins &amp; 186 nominations total","Poster":"https://m.media-amazon.com/images/M/MV5BOGUyZDUxZjEtMmIzMC00MzlmLTg4MGItZWJmMzBhZjE0Mjc1XkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SX300.jpg","Ratings":[{"Source":"Internet Movie Database","Value":"7.7/10"},{"Source":"Rotten Tomatoes","Value":"96%"},{"Source":"Metacritic","Value":"95/100"}],"Metascore":"95","imdbRating":"7.7","imdbVotes":"653,830","imdbID":"tt1285016","Type":"movie","DVD":"11 Jan 2011","BoxOffice":"$96,962,694","Production":"Scott Rudin Productions, Trigger Street Productions, Michael De Luca","Website":"N/A","Response":"True"}</msg>
+<status status="PASS" starttime="20210925 19:18:26.451" endtime="20210925 19:18:26.452"/>
+</kw>
+<status status="PASS" starttime="20210925 19:18:26.449" endtime="20210925 19:18:26.452"/>
+</kw>
+<kw name="Confere Idioma do Filme" library="omdbapiGet">
+<arg>English, French</arg>
+<kw name="Dictionary Should Contain Item" library="Collections">
+<arg>${RESPOSTA.json()}</arg>
+<arg>Language</arg>
+<arg>${FILME_TSW.Language}</arg>
+<doc>An item of ``key`` / ``value`` must be found in a ``dictionary``.</doc>
+<status status="PASS" starttime="20210925 19:18:26.453" endtime="20210925 19:18:26.455"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${FILME_TSW.Language}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210925 19:18:26.456" level="INFO">English, French</msg>
+<status status="PASS" starttime="20210925 19:18:26.455" endtime="20210925 19:18:26.456"/>
+</kw>
+<status status="PASS" starttime="20210925 19:18:26.453" endtime="20210925 19:18:26.456"/>
+</kw>
+<status status="PASS" starttime="20210925 19:18:26.442" endtime="20210925 19:18:26.457"/>
+</test>
+<doc>Casos de Testes para a API</doc>
+<status status="PASS" starttime="20210925 19:18:26.217" endtime="20210925 19:18:26.458"/>
+</suite>
+<status status="PASS" starttime="20210925 19:18:26.180" endtime="20210925 19:18:26.460"/>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="3" fail="0" skip="0" id="s1" name="Tests">Tests</stat>
+<stat pass="3" fail="0" skip="0" id="s1-s1" name="TS Caso01">Tests.TS Caso01</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20210925 19:18:26.366" level="WARN">Keyword 'RequestsLibrary.Get Request' is deprecated. Please use `GET On Session` instead.</msg>
+</errors>
+</robot>

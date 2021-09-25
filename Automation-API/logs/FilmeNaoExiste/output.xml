@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.1 (Python 3.9.7 on win32)" generated="20210925 19:37:38.714" rpa="false" schemaversion="2">
+<suite id="s1" name="TS Caso02" source="E:\Projetos\Desafio Noesis\Automation-API\tests\TS_Caso02.robot">
+<kw name="Conectar a API Caso_2" library="hookApi" type="SETUP">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>omdbapi</arg>
+<arg>${API_URL}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20210925 19:37:38.894" level="INFO">Creating Session using : alias=omdbapi, url=http://www.omdbapi.com/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20210925 19:37:38.893" endtime="20210925 19:37:38.894"/>
+</kw>
+<kw name="Get Request" library="RequestsLibrary">
+<var>${RESPOSTA}</var>
+<arg>omdbapi</arg>
+<arg>?i=tt128501735&amp;apikey=52ec71bf</arg>
+<doc>*DEPRECATED* Please use `GET On Session` instead.</doc>
+<msg timestamp="20210925 19:37:38.895" level="WARN">Keyword 'RequestsLibrary.Get Request' is deprecated. Please use `GET On Session` instead.</msg>
+<msg timestamp="20210925 19:37:38.935" level="INFO">GET Request : url=http://www.omdbapi.com/?i=tt128501735&amp;apikey=52ec71bf 
+ path_url=/?i=tt128501735&amp;apikey=52ec71bf 
+ headers={'User-Agent': 'python-requests/2.26.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20210925 19:37:38.935" level="INFO">GET Response : url=http://www.omdbapi.com/?i=tt128501735&amp;apikey=52ec71bf 
+ status=200, reason=OK 
+ headers={'Date': 'Sat, 25 Sep 2021 22:37:43 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Cache-Control': 'public, max-age=86400', 'Expires': 'Sat, 25 Sep 2021 23:26:57 GMT', 'Last-Modified': 'Sat, 25 Sep 2021 22:26:57 GMT', 'Vary': '*, Accept-Encoding', 'X-AspNet-Version': '4.0.30319', 'X-Powered-By': 'ASP.NET', 'Access-Control-Allow-Origin': '*', 'CF-Cache-Status': 'HIT', 'Age': '645', 'Server': 'cloudflare', 'CF-RAY': '6947bd183b1f2737-FOR', 'Content-Encoding': 'gzip'} 
+ body={"Response":"False","Error":"Incorrect IMDb ID."} 
+ </msg>
+<msg timestamp="20210925 19:37:38.935" level="INFO">${RESPOSTA} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20210925 19:37:38.895" endtime="20210925 19:37:38.935"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${RESPOSTA}</arg>
+<arg>${RESPOSTA}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20210925 19:37:38.936" level="INFO">${RESPOSTA} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20210925 19:37:38.935" endtime="20210925 19:37:38.936"/>
+</kw>
+<status status="PASS" starttime="20210925 19:37:38.893" endtime="20210925 19:37:38.936"/>
+</kw>
+<test id="s1-t1" name="Busca filme inexistente">
+<kw name="Confere Status Code" library="omdbapiGet">
+<arg>200</arg>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${RESPOSTA.status_code}</arg>
+<arg>${200}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<msg timestamp="20210925 19:37:38.939" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" starttime="20210925 19:37:38.938" endtime="20210925 19:37:38.939"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${RESPOSTA.status_code}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210925 19:37:38.940" level="INFO">200</msg>
+<status status="PASS" starttime="20210925 19:37:38.939" endtime="20210925 19:37:38.940"/>
+</kw>
+<status status="PASS" starttime="20210925 19:37:38.937" endtime="20210925 19:37:38.940"/>
+</kw>
+<kw name="Confere Reason" library="omdbapiGet">
+<arg>OK</arg>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${RESPOSTA.reason}</arg>
+<arg>${OK}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20210925 19:37:38.941" endtime="20210925 19:37:38.942"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${RESPOSTA.reason}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210925 19:37:38.943" level="INFO">OK</msg>
+<status status="PASS" starttime="20210925 19:37:38.943" endtime="20210925 19:37:38.944"/>
+</kw>
+<status status="PASS" starttime="20210925 19:37:38.941" endtime="20210925 19:37:38.944"/>
+</kw>
+<kw name="Confere se retorna 2 Filmes" library="omdbapiGet" sourcename="Confere se retorna ${QTDE_FILMES} Filmes">
+<kw name="Length Should Be" library="BuiltIn">
+<arg>${RESPOSTA.json()}</arg>
+<arg>${QTDE_FILMES}</arg>
+<doc>Verifies that the length of the given item is correct.</doc>
+<msg timestamp="20210925 19:37:38.946" level="INFO">Length is 2</msg>
+<status status="PASS" starttime="20210925 19:37:38.945" endtime="20210925 19:37:38.946"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${RESPOSTA.text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210925 19:37:38.947" level="INFO">{"Response":"False","Error":"Incorrect IMDb ID."}</msg>
+<status status="PASS" starttime="20210925 19:37:38.946" endtime="20210925 19:37:38.947"/>
+</kw>
+<status status="PASS" starttime="20210925 19:37:38.944" endtime="20210925 19:37:38.947"/>
+</kw>
+<kw name="Confere se o retorno existe filme" library="omdbapiGet">
+<kw name="Dictionary Should Contain Item" library="Collections">
+<arg>${RESPOSTA.json()}</arg>
+<arg>Response</arg>
+<arg>${FILME_NAO_EXISTE.Response}</arg>
+<doc>An item of ``key`` / ``value`` must be found in a ``dictionary``.</doc>
+<status status="PASS" starttime="20210925 19:37:38.948" endtime="20210925 19:37:38.951"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${FILME_NAO_EXISTE.Response}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210925 19:37:38.952" level="INFO">False</msg>
+<status status="PASS" starttime="20210925 19:37:38.951" endtime="20210925 19:37:38.952"/>
+</kw>
+<kw name="Dictionary Should Contain Item" library="Collections">
+<arg>${RESPOSTA.json()}</arg>
+<arg>Error</arg>
+<arg>${FILME_NAO_EXISTE.Error}</arg>
+<doc>An item of ``key`` / ``value`` must be found in a ``dictionary``.</doc>
+<status status="PASS" starttime="20210925 19:37:38.952" endtime="20210925 19:37:38.955"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${FILME_NAO_EXISTE.Error}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210925 19:37:38.956" level="INFO">Incorrect IMDb ID.</msg>
+<status status="PASS" starttime="20210925 19:37:38.955" endtime="20210925 19:37:38.957"/>
+</kw>
+<status status="PASS" starttime="20210925 19:37:38.948" endtime="20210925 19:37:38.957"/>
+</kw>
+<status status="PASS" starttime="20210925 19:37:38.937" endtime="20210925 19:37:38.958"/>
+</test>
+<doc>Casos de Testes para a API</doc>
+<status status="PASS" starttime="20210925 19:37:38.716" endtime="20210925 19:37:38.960"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="TS Caso02">TS Caso02</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20210925 19:37:38.895" level="WARN">Keyword 'RequestsLibrary.Get Request' is deprecated. Please use `GET On Session` instead.</msg>
+</errors>
+</robot>
