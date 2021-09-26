@@ -8,7 +8,7 @@
 * Atom 1.58.0 x64
 
 ## Instalando o AppiumLibrary
-````
+````sh
 pip install robotframework-requests
 ````
 
@@ -18,19 +18,18 @@ Mapeando Cenários de Teste
 ````
 1 - No endpoint validar o response para:
 
-   • Título do Filme 
-   • Ano do Filme 
-   • Idioma do filme 
-    
-2 - No endpoint validar o response para: 
+   • Título do Filme
+   • Ano do Filme
+   • Idioma do filme
+
+2 - No endpoint validar o response para:
 
    • Busca filme inexistent
-   
+
 ````
 
-#### Criando os Cenarios de Teste
-Utilizei o Design Patterns para o projeto, segue um arquivo de exemplo:
-````
+## Criando os Cenarios de Teste
+```robotframework
 *** Settings ***
 Documentation     Casos de Testes para a API
 
@@ -65,7 +64,7 @@ Seguindo sempre a premissa da documentação -> [CENARIO](https://github.com/Dav
 Utilizando Argumentos e variaveis Globais para validar as requisições.
 
 ### Execução dos Testes de cada cenario
-````
+````sh
 robot -d ./logs tests/TS_Caso01.robot
 ````
 

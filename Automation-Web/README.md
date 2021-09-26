@@ -20,25 +20,25 @@ Automation-Web/config/drivers
 ````
 As versões dos drivers são: \
 Chromedriver -> 93.0.4577.63 \
-Geckodriver -> 0.27.0 
+Geckodriver -> 0.27.0
 
 ### Planejamento dos Testes
 Mapeando Cenários de Teste
 ````
-1 - No site https://www.unimed.coop.br/ validar a seguinte sequência de ações: 
-    • Acessar Guia Médico 
-    • Realizar uma pesquisa de médicos no Rio de Janeiro. 
+1 - No site https://www.unimed.coop.br/ validar a seguinte sequência de ações:
+    • Acessar Guia Médico
+    • Realizar uma pesquisa de médicos no Rio de Janeiro.
     • Validar a apresentação dos resultados com a Especialidade e Cidade
-    
-2 - No mesmo site, validar: 
-    • Acessar Guia Médico 
-    • Realizar uma pesquisa de médicos no Rio de Janeiro. 
+
+2 - No mesmo site, validar:
+    • Acessar Guia Médico
+    • Realizar uma pesquisa de médicos no Rio de Janeiro.
     • Validar nas páginas 1, 2, e 3 do resultado, NÃO apresentação do resultado com cidade São Paulo  
 ````
 
 ###### Criando as Features de Teste
 Tendo em mãos os Cenários de cada fluxos de teste (fluxo base e alternativos), comecei a escrita das features em ***gherkin*** tendo como base o ***BDD***:
-````
+````robotframework
 Cenario 01: Deve validar a apresentação dos resultados com a Especialidade e Cidade
     Dado      que eu esteja na Home Page da Unimed
     E         clicar em "Consulte agora"
@@ -48,7 +48,7 @@ Cenario 01: Deve validar a apresentação dos resultados com a Especialidade e C
     Então     devo validar a apresentação dos resultados com a Especialidade e Cidade
 ````
 
-````
+````robotframework
 Cenario 02: Deve varrer as abas entre 1 e 3 e validar que não apresente o resultado da cidade de São Paulo
     Dado      que eu esteja na Home Page da Unimed
     E         clicar em "Consulte agora"
@@ -58,7 +58,7 @@ Cenario 02: Deve varrer as abas entre 1 e 3 e validar que não apresente o resul
     Então     devo realizar a verificações entre as paginas que não haja resultado da cidade de "São Paulo"
 ````
 
-````
+````robotframework
 Cenario 03: Deve Pesquisar Médico do Estado do Rio de Janeiro em São Paulo
     Dado      que eu esteja na Home Page da Unimed
     E         clicar em "Consulte agora"
@@ -72,15 +72,15 @@ Seguindo sempre a premissa da documentação -> [CENARIO](https://github.com/Dav
 
 ### Execução dos Testes de cada cenario
 
-````
+````sh
     robot -d ./logs/cenario01 -t "Cenario 01: Deve validar a apresentação dos resultados com a Especialidade e Cidade" tests
 ````
 
-````
+````sh
     robot -d ./logs/cenario02 -t "Cenario 02: Deve varrer as abas entre 1 e 3 e validar que não apresente o resultado da cidade de São Paulo" tests
 ````
 
-````
+````sh
     robot -d ./logs/cenario03 -t "Cenario 03: Deve Pesquisar Médico do Estado do Rio de Janeiro em São Paulo" tests
 ````
 

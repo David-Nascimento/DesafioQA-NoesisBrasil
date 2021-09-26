@@ -13,7 +13,7 @@
 Utilizei a versão mais estavel do Appium, segue o link para download -> [APPIUM](https://github.com/appium/appium-desktop/releases/tag/v1.20.2)
 
 ### Instalando o AppiumLibrary
-````
+````sh
 pip install --upgrade robotframework-appiumlibrary
 ````
 
@@ -23,25 +23,25 @@ Depois de instalado a library do appium, vamos aos cenarios de testes e criaçã
 Mapeando Cenários de Teste
 
 ````
-1 – Criar uma classe de teste chamada loginTest, para validar os seguintes cenários: 
+1 – Criar uma classe de teste chamada loginTest, para validar os seguintes cenários:
     a) Login e senha incorretos, validando a mensagem: “Usuario e/ou senha incorreto.”  
     b) Acesso efetuado com sucesso.  Login: admin e Senha: admin  
-    
+
 2 – Criar uma classe de teste chamada listaTest, para validar os seguintes cenários:  
-    • Acessar o menu; 
-    • Acessar a opção Lista; 
+    • Acessar o menu;
+    • Acessar a opção Lista;
     • Realizar uma busca na barra de pesquisa e colocar um assert com a busca realizada.  
-    
-3 – Criar uma classe de teste chamada formTest, para validar os seguintes cenários: 
+
+3 – Criar uma classe de teste chamada formTest, para validar os seguintes cenários:
     • Acessar o menu; •
-     Acessar a opção Form; 
-     • Marcar duas opções a seu gosto. 
+     Acessar a opção Form;
+     • Marcar duas opções a seu gosto.
 ````
 
 
 #### Criando os Cenarios de Teste
 Utilizei o Design Patterns para o projeto, segue um arquivo de exemplo:
-````
+````robotframework
 *** Settings ***
 Documentation   O desafio consiste em criar um projeto de automação mobile, para um APK Android.
 
@@ -78,7 +78,7 @@ Deve acessar o aplicativo e validar a tela de login
 Seguindo sempre a premissa da documentação -> [CENARIO](https://github.com/David-Nascimento/DesafioQA-NoesisBrasil/blob/main/Automation-Mobile/documents/Desafio%204.pdf)
 
 ### Execução dos Testes de cada cenario
-````
+````sh
 robot -d ./logs -i loginSucesso tests
 ````
 
