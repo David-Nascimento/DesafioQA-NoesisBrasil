@@ -68,6 +68,19 @@ Deve tentar se autenticar com uma senha invalida
       Valida Tela de Login
       Senha Invalida
       Validar mensagem            Usuario e/ou senha incorreto
+
+Deve acessar o aplicativo e validar a tela de login
+      [Tags]       loginInvalido
+      Valida Tela de Login
+      login invalido
+      Validar mensagem            Usuario e/ou senha incorreto
+
+Deve acessar o aplicativo e validar a tela de login
+      [Tags]        loginSucesso
+      Valida Tela de Login
+      inserir credenciais validas
+      Validar mensagem login            Bem-vindo ao seu desafio!
+
 ````
 ### Base API
 ````robotframework
