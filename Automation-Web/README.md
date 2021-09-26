@@ -70,6 +70,44 @@ Cenario 03: Deve Pesquisar Médico do Estado do Rio de Janeiro em São Paulo
 
 Seguindo sempre a premissa da documentação -> [CENARIO](https://github.com/David-Nascimento/DesafioQA-NoesisBrasil/blob/Develop/Automation-Web/documents/Desafio%201.pdf)
 
+# Estrutura dos pacotes
+````
+Automation-Web/
+│   ├── config/
+│   │   ├── Cucumber /
+│   │   │   └── cucumber-PTBr.robot
+│   │   ├── drivers /
+│   │   │    ├── chromedriver.exe
+│   │   │    └── geckodriver.exe
+│   │   │
+│   │   └── hooks /
+│   │       └── driverFactory.robot
+│   ├── documents/
+│   │   └── Desafio1.pdf
+│   ├── logs/
+│   │   ├── cenario01 /
+│   │   │   ├── log.html
+│   │   │   ├── output.xml
+│   │   │   └── report.html
+│   │   ├── cenario02 /
+│   │   │   ├── log.html
+│   │   │   ├── output.xml
+│   │   │   └── report.html
+│   │   └── cenario03 /
+│   │       ├── log.html
+│   │       ├── output.xml
+│   │       └── report.html
+│   ├── resource/
+│   │   ├── core /
+│   │   │   └── KWSCenarios.robor
+│   │   └── routes /
+│   │       ├── cenario_1Page.robor
+│   │       └── cenario_2Page.robot
+│   ├── tests/
+│   │    ├── TC_Cenario_1.robot
+│   │    └── TC_Cenario_2.robot
+└── └── README.md
+````
 ### Execução dos Testes de cada cenario
 
 ````sh

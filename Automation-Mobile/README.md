@@ -77,6 +77,55 @@ Deve acessar o aplicativo e validar a tela de login
 
 Seguindo sempre a premissa da documentação -> [CENARIO](https://github.com/David-Nascimento/DesafioQA-NoesisBrasil/blob/main/Automation-Mobile/documents/Desafio%204.pdf)
 
+# Estrutura dos pacotes
+````
+Automation-Mobile/
+│   ├── app /
+│   │   └── NoesisQuaChallenge.apk
+│   ├── config/
+│   │   ├── appium /
+│   │   │   └── appiumDriver.robot
+│   │   └── hook
+│   │       └── hookCenarios.robot
+│   ├── documents/
+│   │   └── Desafio4.pdf
+│   ├── logs/
+│   │   ├── loginInvalido /
+│   │   │   ├── log.html
+│   │   │   ├── output.xml
+│   │   │   └── report.html
+│   │   ├── loginSucesso /
+│   │   │   ├── log.html
+│   │   │   ├── output.xml
+│   │   │   └── report.html
+│   │   ├── realizaBusca /
+│   │   │   ├── log.html
+│   │   │   ├── output.xml
+│   │   │   └── report.html
+│   │   ├── selecionaTechs /
+│   │   │   ├── log.html
+│   │   │   ├── output.xml
+│   │   │   └── report.html
+│   │   └── senhaInvalida /
+│   │       ├── log.html
+│   │       ├── output.xml
+│   │       └── report.html
+│   ├── resource/
+│   │   ├── core /
+│   │   │   ├── KWSformTest.robor
+│   │   │   ├── KWSlistaTest.robot
+│   │   │   └── KWSloginTest.robot
+│   │   └── routes /
+│   │       ├── formTestPage.robor
+│   │       ├── listaTestPage.robot
+│   │       └── loginTestPage.robot
+│   ├── tests/
+│   │   ├── formTest.robot
+│   │   ├── listaTest.robot
+│   │   └── loginTest.robot
+└── └── README.md
+````
+
 ### Execução dos Testes de cada cenario
 ````sh
 robot -d ./logs -i loginSucesso tests
