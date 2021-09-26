@@ -67,7 +67,30 @@ Utilizando Argumentos e variaveis Globais para validar as requisições.
 ````sh
 robot -d ./logs tests/TS_Caso01.robot
 ````
-
+# Estrutura dos pacotes
+````
+Automation-API/
+│   ├── config/
+│   │   └── hookApi.robot
+│   ├── documents/
+│   │   └── Desafio2.pdf
+│   ├── logs/
+│   │   ├── FilmeNaoExiste /
+│   │   │   ├── log.html
+│   │   │   ├── output.xml
+│   │   │   └── report.html
+│   │   └── TituloFilme /
+│   │       ├── log.html
+│   │       ├── output.xml
+│   │       └── report.html
+│   ├── resource/
+│   │   └── routes /
+│   │       └── omdbapiGet.robot
+│   ├── tests/
+│   │   ├── TC_Caso01.robot
+│   │   └── TC_Caso02.robot
+└── └── README.md
+````
 #### Para visualizar os logs de execução vou deixar um link abaixo com cada pasta seguindo a ordem dos Casos de Testes.
 [CASO_01](https://github.com/David-Nascimento/DesafioQA-NoesisBrasil/tree/Develop/Automation-API/logs/TituloFilme)
 [CASO_02](https://github.com/David-Nascimento/DesafioQA-NoesisBrasil/tree/Develop/Automation-API/logs/FilmeNaoExiste)

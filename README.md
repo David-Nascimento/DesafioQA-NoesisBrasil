@@ -21,6 +21,91 @@ pip install robotframework
 ````
 > Robot Framework 4.1.1
 
+# Modelo de escrita usado em cada projeto
+
+### Base WEB
+````robotframework
+*** Settings ***
+Documentation    No site https://www.unimed.coop.br/ validar a seguinte sequência de ações
+
+
+Resource         ../config/Cucumber/cucumber-PTBr.robot
+Resource         ../resource/Pages/cenario_1Page.robot
+Resource         ../config/hooks/driverFactory.robot
+
+Test Setup       Open session
+Test Teardown    Close session
+
+*** Test Case ***
+    [Tags]    cenarioValidaApresentacaoResultados
+Cenario 01: Deve validar a apresentação dos resultados com a Especialidade e Cidade
+    Dado      que eu esteja na Home Page da Unimed
+    E         clicar em "Consulte agora"
+    E         acessar a aba de "Busca detalhada"
+    E         pesquisar pelo estado do "Rio de Janeiro"
+    Quando    eu efetuar a buscar pelo estado selecionado
+    Então     devo validar a apresentação dos resultados com a Especialidade e Cidade
+````
+
+### Base Mobile
+````robotframework
+*** Settings ***
+Documentation   O desafio consiste em criar um projeto de automação mobile, para um APK Android.
+
+Resource  ../config/appium/appiumDriver.robot
+Resource  ../resource/pages/loginTestPage.robot
+Resource  ../config/hook/hookCenarios.robot
+
+# Executa a KW antes de cada testcase
+Test Setup      Open Test Application
+# Executa a KW depois de cada testcase
+Test Teardown   Close Test Application
+
+*** Test Cases ***
+
+Deve tentar se autenticar com uma senha invalida
+      [Tags]      senhaInvalida
+      Valida Tela de Login
+      Senha Invalida
+      Validar mensagem            Usuario e/ou senha incorreto
+````
+### Base API
+````robotframework
+*** Settings ***
+Documentation     Casos de Testes para a API
+
+Resource    ../config/hookApi.robot
+Resource    ../resource/routes/omdbapiGet.robot
+
+Suite Setup   Conectar a API
+
+*** Test Cases ***
+#No endpoint validar o response para
+Titulo do Filme
+  Confere Status Code   200
+  Confere Reason    OK
+  Confere se retorna 25 Filmes
+  Confere Titulo do Filme     The Social Network
+````
+
+# Estrutura dos pacotes
+````
+Desafio Noesis/
+│
+├── Automation-API/
+├── Automation-Mobile/
+├── Automation-Web/
+├── Docs
+│   └── DesafioTecnico_AnalistaQA.pdf
+├── results
+│   └── .gitkeep
+├── .gitignore
+├── Dockerfile
+├── README.md
+└── requirements.txt
+
+````
+
 # Configurações da IDE
 
 Utilizei o [ATOM IDE](https://atom.io/) para o desenvolvimento dos testes.
@@ -42,7 +127,7 @@ Caso contrário -> instale o Docker ToolBox!!!
 
 > No meu caso estou utilizando o Docker Toolbox.
 
-## Comando Utilizados
+## Comandos Utilizados
 
 ### Criar o build da imagem
 ````docker
