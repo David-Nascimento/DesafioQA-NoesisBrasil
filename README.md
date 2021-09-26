@@ -58,9 +58,15 @@ docker images
 docker rmi noesis_robot
 ````
 
-### Rodar os testes do Robot dentro do container
+### Rodar os testes do Robot Web dentro do container
 ````docker
 docker run --rm --name noesis_robot -v " E:\Projetos\Desafio Noesis\Automation-Web\tests":/opt/robotframework/tests -v " E:\Projetos\Desafio Noesis\results":/opt/robotframework/results noesis_robot:latest robot -d /opt/robotframework/results /opt/robotframework/tests
+````
+> OBS. Lembrando que para executar em docker precisa alterar o caminho absoluto da pasta de testes e results
+
+### Rodar os testes do Robot API dentro do container
+````docker
+docker run --rm --name noesis_robot -v " E:\Projetos\Desafio Noesis\Automation-API\tests":/opt/robotframework/tests -v " E:\Projetos\Desafio Noesis\results":/opt/robotframework/results noesis_robot:latest robot -d /opt/robotframework/results /opt/robotframework/tests
 ````
 
 [github.com/David-Nascimento/DesafioQA-NoesisBrasil](https://github.com/David-Nascimento/DesafioQA-NoesisBrasil/commits/main)
