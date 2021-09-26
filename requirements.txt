@@ -1,0 +1,6 @@
+robotframework \
+robotframework-faker \
+robotframework-requests==0.5.0 \
+robotframework-seleniumlibrary \
+robotframework-databaselibrary \
+robotframework-sshlibrary==3.2.1
