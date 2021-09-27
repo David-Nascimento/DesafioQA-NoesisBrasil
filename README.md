@@ -167,4 +167,5 @@ docker run --rm --name noesis_robot -v " E:\Projetos\Desafio Noesis\Automation-W
 docker run --rm --name noesis_robot -v " E:\Projetos\Desafio Noesis\Automation-API\tests":/opt/robotframework/tests -v " E:\Projetos\Desafio Noesis\results":/opt/robotframework/results noesis_robot:latest robot -d /opt/robotframework/results /opt/robotframework/tests
 ````
 
+[gitlab-ci](https://gitlab.com/david_nascimento/DesafioQA-NoesisBrasil/-/pipelines) \
 [github.com/David-Nascimento/DesafioQA-NoesisBrasil](https://github.com/David-Nascimento/DesafioQA-NoesisBrasil/commits/main)
