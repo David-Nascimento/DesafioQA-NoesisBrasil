@@ -4,14 +4,15 @@ Documentation    No site https://www.unimed.coop.br/ validar nas páginas 1, 2, 
 
 Resource         ../config/hooks/driverFactory.robot
 Resource         ../resource/Pages/cenario_2Page.robot
-Resource         ../config/Cucumber/cucumber-PTBr.robot
+Resource         ../config/Cucumber/Cucumber-PTBr.robot
 
 Test Setup       Open session
 Test Teardown    Close session
 
 *** Test Case ***
-    [Tags]    deveValidarQuePesquisaNaoBusquePorSP
+
 Cenario 02: Deve varrer as abas entre 1 e 3 e validar que não apresente o resultado da cidade de São Paulo
+    [Tags]    deveValidarQuePesquisaNaoBusquePorSP
     Dado      que eu esteja na Home Page da Unimed
     E         clicar em "Consulte agora"
     E         acessar a aba de "Busca detalhada"
